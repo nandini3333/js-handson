@@ -167,26 +167,30 @@
          sol :
                 const Prime_Check = (N) => 
                 { 
-                      var count = 0;
-            
-                      for(let i = 2 ; i < N ; i++){
-                          if(N % i === 0){
-                             count++;
-                             break;
-                          }
-                      }
-              
-                
-                      if(count > 0 ){
+         
+                   if (N == 1)
+                   {
                          return "NO";
-                      }
-              
-                
-                    else{
+                   }
+                   else if(N == 2)
+                   {
                         return "YES";
-                    }
-              
-                };
+                   }
+                   else
+                   {
+                        for(var x = 2; x < N; x++)
+                        {
+                           if(N % x === 0)
+                           {
+                               return "NO";
+                           }
+                        }
+                        
+                        return "YES";  
+                   }
+         
+                   };
+               
      </pre>
 
      <pre class="query">
