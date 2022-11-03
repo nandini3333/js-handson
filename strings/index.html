@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Strings</h1>
+    <pre class="query">
+        1) <span>Count Characters</span>
+           You are given a string S, and your task is to return an array B( having a size of  2),
+           where B[0]contains the count of character A (uppercase) in string S and  B[1]
+           contains the count of character D (uppercase) in string S.
+        
+           Note: You have to complete countCharacters function. No need to take any input.
+    </pre>
+
+     <pre class="sol">
+        sol : 
+                  const countCharacters = (S) => 
+                  {
+                        var B = [];
+                        let countA = 0;
+                        let countD = 0;
+                      for( let i =0 ; i<S.length ; i++){
+                              if(S[i] == "A"){
+                                   countA+=1;
+                              }
+                              else if(S[i] == "D"){
+                                   countD+=1;
+                              }
+            
+                  }
+          
+                       B.push(countA,countD);
+           
+                       return B;
+                 };
+             
+         
+     </pre>
+
+     <pre class="query">
+        2) <span>Count the Heads</span>
+           Tina is given a string  S which contains the first letter of all the student names in 
+           her class. She got a curiosity to check how many people have their names starting from the 
+           same alphabet. So given a string  S , she decided to write a code that finds out the count
+           of characters that occur more than once in the string.
+
+           Note: You have to complete Count Head function. No need to take any input.      
+     </pre>
+     <pre class="sol">
+        sol : 
+                  var Count_Occ = (s) => 
+                  {
+                        let Arr = s.split("").sort();
+                        var p;
+                        let map1 = new Map();
+                      for(let i = 0; i<Arr.length; i++){
+                        p = 0;
+                     Arr.reduce((acc,val) => 
+                     {
+                            if(val == Arr[i])
+                            {
+                                 p = acc+ 1;
+                            }
+                    
+                           return p;
+                    }, 0);
+                  
+                 map1.set(`${Arr[i]}` , p);
+                 }
+             
+                   let z=[];
+                   map1.forEach((value,key)=> 
+                   {
+                        if(value>1)
+                        {
+                            z.push(key + "" + value);
+                        }
+                    
+                    });
+                  
+                   return (z.join(""));
+          
+               };
+        <pre>
+    <pre class="query">
+        3) <span>Count the Vowels</span>
+            You are given a string S containing both uppercase and lowercase letters. You need 
+            to find out the number of vowels in the given string.
+
+            Note: You have to complete Count_Vowel function. No need to take any input.
+
+     </pre>
+    <pre class="sol">
+        sol :
+                    var Count_Vowels= (S) => 
+                    {
+             
+                         const count = S.match(/[aeiou]/gi).length;
+                         return count;
+                    };
+         
+     </pre>
+
+    <pre class="query">
+        4) <span>Concatenate the Strings</span>
+            You are given two strings S1 and S2(containing both uppercase and lowercase letters), 
+            You need to retrun a string which is the concatenation of both the given strings. 
+        
+            Note: You have to complete Concatenate_Strings function. No need to take any input.
+     </pre>
+    <pre class="sol">
+        sol : 
+                     var Concatenate_Strings = (S1, S2) => 
+                     {
+                            var result = S1.concat(S2);
+                            return result;
+                     };
+ 
+     </pre>
+
+     <pre class="query">
+        5) <span>Find Length</span>
+            You are given a string S, and your task is to return the length of the string S.
+        
+            Note: You have to solve it without using length method. You have to complete findLength 
+            function. No need to take any input.
+     </pre>
+    <pre class="sol">
+        sol : 
+                 const findLength = (S) => 
+                 {
+                      return S.length;
+                 }; 
+
+     </pre>
+
+     <pre class="query">
+        6) <span>Find the Winner</span>
+            You are given a string S consisting of two letters A and D,where each character represent 
+            the winner of N games played between Aditya and Danish, where letter Arepresents the win 
+            of Aditya and letter D represents the win of Danish. You need to find out the that which 
+            player wins the maximum number of games or there is a draw between them.
+
+            Note: You have to complete Game_Winner function. No need to take any input.
+     </pre>
+     <pre class="sol">
+         sol : 
+                   var Game_Winner = (S) => 
+                   {
+                         let countA = S.match(/[A]/gi).length;
+                         let countB = S.match(/[D]/gi).length;
+                         if(countA > countB){
+                                return "Aditya"
+                         }
+            
+                        else if(countA < countB){
+                                return "Danish"
+                         }
+            
+                        else{
+                                return "Draw"
+                         }
+                    }
+     </pre>
+
+     <pre class="query">
+        7) <span>Join Strings</span>
+           You are given two strings S and P, and your task is to concatenate them and return 
+           the concatenated string.
+
+           Note: You have to complete joinStrings function. No need to take any input.
+        
+     </pre>
+     <pre class="sol">
+         sol :
+                 const joinStrings = (S, P) => 
+                {
+                     var b = (S+P);
+                     return b;
+             
+                };
+               
+     </pre>
+
+     <pre class="query">
+        8) <span>Plaindrome Check</span>
+            You are given a string S, Your task is to check wether the given string is a 
+            Palindrome or not
+            A palindrome is a string, which turnout same when read in reverse direction.
+            Example: "naman" is a Palindrome.
+                      String can contain both upppercase lowercase letters.
+        
+            Note: You have to complete Plain_Check function. No need to take any input.
+     </pre>
+     <pre class="sol">
+        sol : 
+                 var Palin_Check = (str) =>
+                 {
+                     let i =0;
+                     let j = str.length - 1;
+                    while(i<j){
+                        if(str[i] == str[j])
+                        {
+                             return "True";
+                           i++;
+                           j--;
+                        }
+                        else
+                        {
+                             return "False";
+                         }
+                    }
+                 };
+        
+     </pre>
+
+     <pre class="query">
+        9) <span>Reverse the String</span>
+            You are given a string S, Your task is to Reverse the string. String can contain both 
+            upppercase lowercase letters. 
+            Note: You have to complete Reverse_String function. No need to take any input.
+     </pre>
+    <pre class="sol">
+        sol :
+                  var Reverse_String = (str) => 
+                  {
+                          let b = str.split('');
+                          let c = b.reverse();
+                          return c.join('');
+                 };
+     </pre>
+
+     <pre class="query">
+        10) <span>Match the Strings</span>
+             You are given two strings S1 and S2, Your task is to print YES if both strings are same 
+             else print NO.
+        
+             Note: You have to complete String_Match function. No need to take any input.
+        
+     </pre>
+     <pre class="sol">
+         sol :
+                      var String_Match = (S1,S2) => 
+                      {
+                          let res = S1.localeCompare(S2);
+                           if(res == 0){
+                             return "YES";
+                           }
+             
+                          else{
+                             return "NO";
+                           }
+                      };
+                
+     </pre>
+
+     <pre class="query">
+        11) <span>String Replace</span>
+             You are given a string S, along with a pattern string and a text string. You need to 
+             repalce the pattern string in S to the text string.
+        
+             Note: You have to complete Replace function. No need to take any input.
+        
+     </pre>
+      <pre class="sol">
+         sol :
+                   var Replace = (S, pattern , text) => 
+                   {
+                        return S.replace(pattern,text);
+               
+                   };
+                      
+     </pre>
+     <pre class="query">
+        11) <span>String Replace</span>
+             You are given a string S, along with a pattern string and a text string. You need to 
+             repalce the pattern string in S to the text string.
+        
+             Note: You have to complete Replace function. No need to take any input.
+        
+     </pre>
+     <pre class="sol">
+         sol :
+                   var Replace = (S, pattern , text) => 
+                   {
+                        return S.replace(pattern,text);
+               
+                   };
+                      
+     </pre>
+     <pre class="query">
+        12) <span>Split the String</span>
+             You are given a string S, Your task is to split the string with respect to spaces.
+        
+             Note: You have to complete Split_the_String function. No need to take any input.
+     </pre>
+     <pre class="sol">
+         sol :
+                  var Split_the_string = (S) => 
+                  {
+                     return S.split(" ");
+                 
+                 };
+                          
+     </pre>
+
+     <pre class="query">
+        13) <span>Count the Vowels and Consonants</span>
+             You are given a string S containing both uppercase and lowercase letters. You need to 
+             find out the number of vowels and the number of consonants in the given string.
+        
+             Note: You have to complete Count_Vowels function and Count_Consonants function. No need to take any input.
+        
+     </pre>
+     <pre class="sol">
+         sol :
+                var Count_Vowels= (S) => 
+                {
+                     var result = S.match(/[aeiou]/gi).length;
+                     return result;
+                };
+                     var Count_Consonants = (S) => 
+                {
+                    let splitstring = S.split('');
+                    let res = splitstring.filter(n => n.match(/[^aeiou]/) !== null).length;
+                   return res;
+                };
+          
+     </pre>
+           
+    
+
+
+</body>
+</html>
