@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Functions</h1>
+    <pre class="query">
+        1) <span>Create one function with zero parameter having a console statement;</span>
+    </pre>
+    <pre class="sol">
+        sol : 
+               function myFunction(){
+                  console.log("Hello World");
+               }
+               myFunction();  
+     </pre>
+
+     <pre class="query">
+        2) <span>Create one function which takes two values as a parameter and print the sum 
+            of them as "Sum of 3, 4 is 7"</span>
+    </pre>
+    <pre class="sol">
+        sol : 
+              function myFunction(a,b){
+                    let sum = a + b;
+                console.log(" sum of " + a + "," + b + " is " + sum);
+              }
+        
+              myFunction(3,4); 
+     </pre>
+
+     <pre class="query">
+        3) <span>Create one arrow function</span>
+     </pre>
+     <pre class="sol">
+        sol : 
+               const digits = [1,2,3,4];
+               let  sum = digits.map( (n) =>  n + 1);
+               console.log(sum);
+     </pre>
+     <pre class="query">
+        4) <span>"Print output: 
+            var x = 21;
+            var girl = function () {
+              console.log(x);
+              var x = 20;
+              };
+            girl ();"</span>
+     </pre>
+     <pre class="sol">
+        sol : 
+               undefined
+    </pre>
+    <pre class="query">
+        5) <span>"Print output": 
+           var x = 21;
+           girl ();
+           console.log(x)
+           function girl() {
+              console.log(x);
+              var x = 20;
+            };
+          </span>
+     </pre>
+    <pre class="sol">
+        sol : 
+              undefined
+              21
+ </pre>
+ <pre class="query">
+        6) <span>"Print output"
+           var x = 21;
+           a();
+           b();
+           function a() { 
+              x = 20;
+              console.log(x);
+           };
+           function b() {  
+              x = 40;
+             console.log(x);
+           };</span>
+</pre>
+<pre class="sol">
+       sol : 
+             20
+             40
+</pre>
+<pre class="query">
+        7) <span>Write a function that accepts parameter n and returns factorial of n</span>
+</pre>
+<pre class="sol">
+       sol : 
+             var n = 4;
+             var fact = 1;
+             for( let i = 1; i <= n ;i++){
+                fact = fact * i;
+             }
+             console.log(fact); 
+
+</pre>
+
+
+
+
+</body>
+</html>

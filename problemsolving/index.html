@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Problem Solving</h1>
+    <pre class="query">
+        1) <span>Find the Smaller Angle</span>
+            PrepBuddy has an analog clock which consists of two hands one for hour 
+            and another for minute. She wants to calculate the shorter angle formed 
+            between hour and minute hand at any given time.
+
+           Note: You have to complete Minimal_Angle function. No need to take any input.
+    </pre>
+    <pre class="sol">
+        sol :
+                var Minimal_Angle = (h, m) => 
+                {
+                     var hourAngle = ((h * 60) + m) * 0.5;
+                     var minuteAngle = m * 6;
+                     var angle = Math.abs(hourAngle - minuteAngle)
+                       if(angle > 180){
+                            return 360 - angle
+                       }
+                      else{
+                            return angle
+                       }
+                };    
+     </pre>
+     <pre class="query">
+        2) <span>Check whether the year is Leap year or not. </span>
+           Write a program which takes an year N as input from the user and find out 
+           whether the given year is a Leap Year or not.
+
+          Note: You have to complete Check_Leap function. No need to take any input.
+    </pre>
+    <pre class="sol">
+        sol : 
+                 var Check_Leap = (year) => 
+                 {
+                     if((year % 4 == 0)&& (year % 100 !== 0) || (year % 400 == 0)){
+                          return "Leap Year"
+                    }
+                 else{
+                          return "Non Leap Year"
+                     }
+          
+                };
+          <pre>
+     <pre class="query">
+        3) <span>Perfect Number Check.</span>
+            Have you heard of Perfect numbers? If not let me tell you what is it, Perfect 
+            Numbers are integers that are equal to the sum of all its divisors except 
+            that number itself.
+            Now, You are given an integer N, write a program to check whether the 
+            given number is a Perfect Number or not.
+        
+            Note: You have to complete Perfect _Check function. No need to take any input.
+     </pre>
+     <pre class="sol">
+        sol :
+                 var Perfect_Check = (N) => 
+                 {   
+                     var sum = 0;
+                     for(let i = 1 ; i <= N; i++){ 
+                         if(N % i == 0){
+                            sum = sum + i;
+                         }
+                      }
+            
+                      if(sum == N){
+                         return "YES"
+                      }
+            
+                     else{
+                         return "NO"
+                     }
+                
+                 };
+     </pre>
+    <pre class="query">
+        4) <span>Reverse a Number.</span>
+            Write a program which takes a numebr N as input from the user and 
+            You need to reverse the number.
+
+            Note: You have to complete Reverse_Number function. No need to take any input.
+     </pre>
+     <pre class="sol">
+        sol : 
+                var Reverse_Number = (N) => 
+                {
+                   N = N + ' '; 
+                   let b = Math.floor(N.split('').reverse().join(''))
+                      return b
+                };
+     </pre>
+     <pre class="query">
+        5) <span>Substring Check.</span>
+           You are given two strings S1 and S2, you need to check whether the string 
+           S1 is a substring of string S2 or not.
+        
+           Note: You have to complete Substring_Check function. No need to take any input.
+     </pre>
+     <pre class="sol">
+        sol : 
+                 var Substring_Check = (S1, S2) => 
+                 {
+                      var b = S1.includes(S2);
+                      if(b==true){
+                          return "YES";
+                      }
+            
+                    else{
+                          return "NO";
+                        }
+                 };
+         
+         
+
+     </pre>
+</body>
+</html>
