@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sets&Maps</h1>
+    <pre class="query">
+    1) "Problem:
+        You are given a string (STR) of length N, consisting of only the lower case English alphabet.
+        Your task is to remove all the duplicate occurrences of characters in the string.
+        
+        Input:
+        abcadeecfb
+        
+        Output:
+        abcdef"
+    </pre>
+
+     <pre class="sol">
+        sol :
+              var letters = "abcadeecfb";
+              var mySet = new Set(letters);
+              let d = Array.from(mySet).join('');
+                   console.log(d); 
+     </pre>
+     <pre class="query">
+     2) "Problem:
+        You are given a string (STR) of length N, you have to print the count of all alphabet.(using maps)
+        
+        Input:
+        abcadeecfb
+        
+        Output:
+        a=2
+        b=2
+        c=2
+        d=1
+        e=2
+        f=1"      
+     </pre>
+     <pre class="sol">
+        sol : 
+           function printans(ans){
+              for(let[ley,value] of ans){
+                console.log(`${key} occurs ${value}times`);
+              }
+            }
+              function count(str,outp_map){
+                let k = outp_map.get(str[i]);
+                out_map.set(str[i],k+1);
+              }
+              printans(outp_map);
+           }
+
+           function count_occurrences(test,callback){
+             if(test.length === 0){
+                console.log("empty.string");
+                return;
+             }
+
+             else{
+                let ans = new Map();
+                {
+                    ans.set(test[i],0);
+                }
+            callback(test,ans);
+             }
+        }
+
+        let test ="abcadeecfb";
+        count_occurs(test,count);
+
+        
+        <pre>
+</body>
+</html>
