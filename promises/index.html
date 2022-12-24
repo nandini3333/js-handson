@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Promises,async and await</h1>
+    <pre class="query">
+        1) <span>Write one example explaining how you can write a callback function.</span>
+    </pre>
+    <pre class="sol">
+        sol : A callback is a function passed as an argument to another function. 
+        
+              Example:
+                        function wish(){
+                            return "Merry Christmas"
+                        }
+                        function festival(callback){
+                            let greet = callback()
+                            console.log(`${greet} to everyone`)
+                        }
+                        festival(wish)
+             
+              In the above code, wish function is passed as an argument to festival function.Hence we can say
+              wish is a callback function
+     </pre>
+
+     <pre class="query">
+        2) <span>"Write a callback function to print numbers from 1 to 7, in which 1 should be printed
+           after 1 sec, 2 should be printed after 2 sec, 3 should be printed after 3 sec, and so on. 
+
+           Explain callback hell.
+           Numbers
+           1
+           2
+           3
+           4
+           5
+           6
+           7"
+        </span>
+    </pre>
+    <pre class="sol">
+        sol : <ul>
+           <li>The phenomenon which happens when we nest multiple callbacks within a function 
+              is called a callback hell.</li> 
+          <li>The shape of the resulting code structure resembles a pyramid and hence callback 
+              hell is also called the “pyramid of the doom”. 
+          <li>It makes the code very difficult to understand and maintain</li>
+             </ul> 
+             
+             setTimeout(() => {
+               console.log("1")
+               setTimeout(() => {
+                  console.log("2")
+                  setTimeout(() => {
+                      console.log("3")
+                      setTimeout(() => {
+                          console.log("4")
+                          setTimeout(() => {
+                              console.log("5")
+                              setTimeout(() => {
+                                  console.log("6")
+                                  setTimeout(() => {
+                                      console.log("7")
+                                   }, 1000);
+                               }, 6000);
+                           }, 5000);
+                       }, 4000);
+                   }, 3000);
+               }, 2000);
+          },1000);  
+     </pre>
+
+     <pre class="query">
+        3) <span>"Write the promise function to print numbers from 1 to 7, in which 1 should 
+           be printed after 1 sec, 2 should be printed after 2 sec, 3 should be printed after 3 sec, and so on. 
+
+           Numbers
+           1
+           2
+           3
+           4
+           5
+           6
+           7</span>
+     </pre>
+     <pre class="sol">
+        sol : const promise = new Promise((resolve,reject)=>{
+            setTimeout(() => {
+                resolve()       
+            },1000);
+        })
+        
+        promise
+        .then(()=>{
+            console.log("1")
+        })
+         .then(()=>{
+             setTimeout(() => {
+                console.log("2")
+             }, 3000);
+         })
+         .then(()=>{
+            setTimeout(() => {
+                console.log("3")
+            },6000);
+         })
+         .then(()=>{
+            setTimeout(() => {
+                console.log("4")
+            },10000);
+         })
+         .then(()=>{
+            setTimeout(() => {
+               console.log("5")
+            },15000);
+        })
+        .then(()=>{
+            setTimeout(() => {
+               console.log("6")
+            }, 21000);
+        })
+        .then(()=>{
+            setTimeout(() => {
+               console.log("7")
+            },27000);
+        })
+         .catch((error)=>{
+             console.log(error)
+         })
+              
+     </pre>
+     <pre class="query">
+        4) <span>Create a promise function accepting an argument, if yes is passed to the function
+            then it should go to resolved state and print Promise Resolved, and if nothing is passed 
+            then it should go to reject the state and catch the error and print Promise Rejected</span>
+     </pre>
+     <pre class="sol">
+        sol : const promise = new Promise((resolve,reject)=>{
+              var a = 12
+              if(a>=10){
+                  resolve("Promise Resolved")
+              }
+              else{
+                  reject("Promise Rejected")
+              }
+             })
+      
+             promise
+                 .then((res)=> {
+                     console.log(res)
+                 })
+                .catch((err)=> {
+                     console.log(err)
+                 })           
+    </pre>
+    <pre class="query">
+        5) <span>Create examples to explain callback function</span>
+     </pre>
+    <pre class="sol">
+        sol :  function greet(){
+                   return "Advance"
+              }
+       
+              function wish(year,callback){
+                 let gt = greet()
+                      console.log(`${gt} Happy New Year ${year}`)
+                }
+       
+              wish("2023",greet) 
+              
+            In the above code, greet function is passed as an argument to wish function.
+            Hence greet is called callback function 
+ </pre>
+ <pre class="query">
+        6) <span>Create examples to explain callback hell function</span>
+</pre>
+<pre class="sol">
+       sol : Callback Hell is essentially nested callbacks stacked below one another 
+             forming a pyramid structure. Every callback depends/waits for the previous 
+             callback, thereby making a pyramid structure that affects the readability 
+             and maintainability of the code. 
+
+            example:
+            setTimeout(() => {
+                console.log("1")
+                setTimeout(() => {
+                   console.log("2")
+                   setTimeout(() => {
+                       console.log("3")
+                       setTimeout(() => {
+                           console.log("4")
+                           setTimeout(() => {
+                               console.log("5")
+                               setTimeout(() => {
+                                   console.log("6")
+                                   setTimeout(() => {
+                                       console.log("7")
+                                    }, 1000);
+                                }, 6000);
+                            }, 5000);
+                        }, 4000);
+                    }, 3000);
+                }, 2000);
+           },1000);
+             
+</pre>
+<pre class="query">
+        7) <span>Create examples to explain promises function</span>
+</pre>
+<pre class="sol">
+       sol : 
+            A Promise is a special JavaScript object. It produces a value after an asynchronous 
+            (aka, async) operation completes successfully, or an error if it does not complete 
+            successfully due to time out, network error, and so on. 
+            
+            Successful call completions are indicated by the resolve function call, and errors 
+               are indicated by the reject function call.
+            resolve can be handled by .then() method whereas reject is handled by .catch() method
+
+            Example:  
+                      const promise = new Promise((resolve,reject)=>{
+                        setTimeout(() => {
+                              resolve()   
+                              reject()    
+                        },1000);
+                     })
+            
+                     promise
+                       .then(()=>{
+                          console.log("1")
+                       })
+                      .catch(()=>{
+                         console.log("err")
+                      })
+
+            In the above code, if the promise is resolved then it will execute .then() ,otherwise
+            it will execute .catch()
+</pre>
+<pre class="query">
+       8) <span>Create examples to explain async await function</span>
+ </pre>
+<pre class="sol">
+       sol :  async - The keyword async before a function makes the function return a promise
+              await - The await keyword makes the function pause the execution and wait for a 
+                      resolved promise before it continues
+                      It  can only be used inside an async function
+
+              Example: 
+                        function resolveAfter2Seconds() {
+                            return new Promise(resolve => {
+                              setTimeout(() => {
+                                 resolve('resolved');
+                              }, 2000);
+                           });
+                         }
+              
+                          async function asyncCall() {
+                                console.log('calling');
+                                const result = await resolveAfter2Seconds();
+                                     console.log(result);
+                        }
+              
+              asyncCall();
+              
+</pre>
+<pre class="query">
+    8) <span>Create examples to explain promise.all function</span>
+</pre>
+<pre class="sol">
+    sol :  The Promise.all() method takes an iterable of promises as input and returns a 
+           single Promise. This returned promise fulfills when all of the input's promises 
+           fulfill (including when an empty iterable is passed), with an array of the 
+           fulfillment values. It rejects when any of the input's promises rejects, with this
+           first rejection reason.
+
+           Example: const promise1 = Promise.resolve(3);
+                    const promise2 = 42;
+                    const promise3 = new Promise((resolve, reject) => {
+                    setTimeout(resolve, 100, 'foo');
+                     });
+           
+                    Promise.all([promise1, promise2, promise3]).then((values) => {
+                       console.log(values);
+                    });
+           
+</pre>
+<script src="./index.js"></script>
+</body>
+</html>

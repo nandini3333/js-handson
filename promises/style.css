@@ -1,0 +1,32 @@
+h1{
+    color:#D67D3E;
+    margin : 18px 0px 25px 360px;
+    text-decoration-line: underline;
+    
+}
+
+body{
+    margin-left:120px;
+}
+.query{
+    font-style: italic;
+    font-weight: bold;
+    color:#d35688;
+    font-size: 1.2rem;
+}
+
+.sol{
+    font-weight: 900;
+    font-size: 1.1rem;
+    color: cornflowerblue;
+    
+}
+
+span{
+    color:forestgreen;
+    font-weight: bold;
+}
+
+ul{
+    margin-left:80px;
+}
